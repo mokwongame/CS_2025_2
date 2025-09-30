@@ -94,14 +94,32 @@ namespace MyData
             Console.WriteLine($"2열 합 = {sum2,-3:D}");
 
             Console.WriteLine("\n[2-3]\n");
-            Person person; // struct는 value형 자료형; 할당(=) 없이 그대로 사용 가능
-            Console.Write("이름: ");
-            string name = Console.ReadLine(); // 키보드 입력을 한 줄(line) 읽기(read)
-            person.Name = name;
-            Console.Write("나이: ");
-            string age = Console.ReadLine();
-            person.Age = int.Parse(age); // 문자열 -> 정수
-            Console.WriteLine($"입력: 이름 = {person.Name}, 나이 = {person.Age}");
+            //Person person; // struct는 value형 자료형; 할당(=) 없이 그대로 사용 가능
+            //Console.Write("이름: ");
+            //string name = Console.ReadLine(); // 키보드 입력을 한 줄(line) 읽기(read)
+            //person.Name = name;
+            //Console.Write("나이: ");
+            //string age = Console.ReadLine();
+            //person.Age = int.Parse(age); // 문자열 -> 정수
+            //Console.WriteLine($"입력: 이름 = {person.Name}, 나이 = {person.Age}");
+
+            Console.WriteLine("\n[2-5]\n");
+            //Console.Write("주민번호: ");
+            //string natId = Console.ReadLine();
+            //// 구분자 -로 문자열 분리(split)
+            //string[] strAr = natId.Split("-"); // 배열 원소 개수는 2개
+            //// 좌우 공백 자르기(trim)
+            //string birth = strAr[0].Trim(); // 생년월일
+            //string address = strAr[1].Trim(); // 주소지
+            //Console.WriteLine($"앞자리 = {birth}, 뒷자리 = {address}");
+
+            Console.WriteLine("\n[2-7]\n");
+            Console.Write("원화: ");
+            string strWon = Console.ReadLine();
+            double won = double.Parse(strWon);
+            double ratio = 1_203.45; // _ 의미: 긴 숫자의 자리를 표시하는 , 대용
+            double dollar = won / ratio;
+            Console.WriteLine($"달러 = {dollar:F2}"); // 실수를 소수점(F) 두자리(2)까지 출력
         }
     }
 }
