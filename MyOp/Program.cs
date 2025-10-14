@@ -24,8 +24,32 @@
             ////uint result = num / 8;
             //uint result = num >> 3;
             //Console.WriteLine($"8로 나눈 결과: {result}");
+            ////string strBin = result.ToString(); // 십진수로 문자열 생성
+            //string strBin = result.ToString("B3"); // 이진수(B)로 문자열 3자리 생성
+            //Console.WriteLine($"8로 나눈 이진수 결과: {strBin}");
 
+            Console.WriteLine("\n[3-5]\n");
+            //Console.Write("각도를 입력하세요: ");
+            //string input = Console.ReadLine() ?? "0";
+            //double angle = double.Parse(input);
+            //string name = (angle > 90.0 && angle < 180.0) ? "둔각" : "예각 또는 직각";
+            //Console.WriteLine($"입력한 각도는 {name}입니다.");
 
+            Console.WriteLine("\n[3-7]\n");
+            int[] ar = new int[] { 30, 2, 19, 1 }; // 1차원 배열 정의
+            int tmp = ar[0];
+            //ar[0] = ar[3];
+            ar[0] = ar[^1];
+            ar[^1] = tmp;
+            Console.WriteLine($"[{ar[0]}, {ar[1]}, {ar[2]}, {ar[3]}]");
+
+            Console.WriteLine("\n[3-9]\n");
+            Console.Write("자연수를 입력하세요: ");
+            string name = Console.ReadLine() ?? "0";
+            uint num = uint.Parse(name);
+            uint result1 = num & 0b1111; // 이진수 마스킹
+            uint result2 = num & 0xF; // 16진수 마스킹
+            Console.WriteLine($"이진수 마스킹 = {result1:X}, 16진수 마스킹 = {result2:X}"); // X는 16진수로 출력 의미
         }
 
         static void Example3()

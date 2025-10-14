@@ -1,4 +1,4 @@
 chcp 65001
 git add --all
-git commit -m "MyOp 프로젝트 시작"
+git commit -m "3장 연습문제 풀이"
 git push -u origin main
