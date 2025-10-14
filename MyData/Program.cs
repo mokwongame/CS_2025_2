@@ -115,7 +115,7 @@ namespace MyData
 
             Console.WriteLine("\n[2-7]\n");
             Console.Write("원화: ");
-            string strWon = Console.ReadLine();
+            string strWon = Console.ReadLine() ?? "0";
             double won = double.Parse(strWon);
             double ratio = 1_203.45; // _ 의미: 긴 숫자의 자리를 표시하는 , 대용
             double dollar = won / ratio;
