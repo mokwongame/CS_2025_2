@@ -61,18 +61,69 @@
             // uint[] prime = new uint[] { 2, 3, 5, 7, 11, 13, 17, 19, 23 };
 
             Console.WriteLine("\n[4-5]\n");
-            Console.Write("문자열을 입력하세요: ");
-            string input = Console.ReadLine() ?? "";
-            string output = "";
-            // 반복문: 문자열의 문자 단위로 반복 -> foreach가 적절
-            const string vowel = "aeiou"; // 바뀌지 않아서 상수 문자열로 정의
-            foreach (char c in input)
+            //Console.Write("문자열을 입력하세요: ");
+            //string input = Console.ReadLine() ?? "";
+            //string output = "";
+            //// 반복문: 문자열의 문자 단위로 반복 -> foreach가 적절
+            //const string vowel = "aeiou"; // 바뀌지 않아서 상수 문자열로 정의
+            //foreach (char c in input)
+            //{
+            //    // 모음인지 판단 -> 조건문
+            //    if (!vowel.Contains(c)) // 모음이 아니면
+            //        output += c;
+            //}
+            //Console.WriteLine($"모음 없는 문자열 = {output}");
+
+            //Console.WriteLine("\n[4-7]\n");
+            //Console.Write("문자열을 입력하세요: ");
+            //string input = Console.ReadLine() ?? "";
+            //string output = "";
+            //foreach (char c in input)
+            //{
+            //    if (char.IsLower(c)) output += char.ToUpper(c);
+            //    else if (char.IsUpper(c)) output += char.ToLower(c);
+            //    else output += c;
+            //}
+            //Console.WriteLine($"대소문자가 바뀐 문자열: {output}");
+
+            Console.WriteLine("\n[4-9]\n");
+            int[] arr = new int[] { 26, 74, 93, 10, 34, 65 };
+            int imax = int.MinValue;
+            int imin = int.MaxValue;
+            // 원소 단위로 반복
+            //foreach (int i in arr)
+            //{
+            //    if (i > imax) imax = i;
+            //    if (i < imin) imin = i;
+            //}
+            int maxIdx = -1;
+            int minIdx = -1;
+            // index k를 기준으로 반복
+            for (int k = 0; k < arr.Length; k++)
             {
-                // 모음인지 판단 -> 조건문
-                if (!vowel.Contains(c)) // 모음이 아니면
-                    output += c;
+                int i = arr[k];
+                if (i > imax)
+                {
+                    imax = i;
+                    maxIdx = k;
+                }
+                if (i < imin)
+                {
+                    imin = i;
+                    minIdx = k;
+                }
             }
-            Console.WriteLine($"모음 없는 문자열 = {output}");
+            Console.WriteLine($"최대값 = {imax}, 최소값 = {imin}");
+            // 최대, 최소 위치 바꾸기
+            int tmp = arr[maxIdx];
+            arr[maxIdx] = arr[minIdx];
+            arr[minIdx] = tmp;
+            Console.Write("[ ");
+            foreach (int i in arr)
+            {
+                Console.Write($"{i}, ");
+            }
+            Console.WriteLine(" ]");
         }
 
         static void Example4()
