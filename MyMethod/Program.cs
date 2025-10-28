@@ -28,6 +28,88 @@
             Console.WriteLine($"연산 결과: {x} {op} {y} = {result}");
             Calculate2(ref x, op, ref y, out result);
             Console.WriteLine($"연산 결과: {x} {op} {y} = {result}");
+
+            Console.WriteLine("\n[5-5]\n\n");
+            //Console.Write("숫자 배열을 입력하세요: ");
+            //string input = Console.ReadLine() ?? "0";
+            //string[] arStr = input.Split(" ");
+            //PrintArray(arStr);
+            //int[] arInt = new int[arStr.Length];
+            //for (int i = 0; i < arInt.Length; i++)
+            //    arInt[i] = int.Parse(arStr[i]);
+            //Console.WriteLine(""); PrintArray(arInt);
+            //ans = FindMax(arInt);
+            //Console.WriteLine($"\n\n최대값 = {ans}");
+
+            Console.WriteLine("\n[5-7]\n\n");
+            int[] A = new int[] { 1, 2, 3, 4, 5, 1, 2, 7 };
+            int[] B = new int[] { 1, 10, 20, 30, 7 };
+            int[] union = UnionArray(A, B);
+            Console.Write("\n합집합 = ");
+            PrintArray(union);
+
+            Console.WriteLine("\n[5-9]\n\n");
+            int i = 15;
+            ans = FactoRecursive(i);
+            Console.WriteLine($"{i}! = {ans}");
+        }
+
+        static int FactoRecursive(int n)
+        {
+            if (n == 1) return 1; // 종료 조건
+            else return n * FactoRecursive(n - 1); // 재귀 구문
+        }
+
+        static int[] UnionArray(int[] A, int[] B)
+        {
+            int size = A.Length + B.Length;
+            int[] union = new int[size];
+            union[0] = A[0];
+            int idx = 1;
+            for (int i = 1; i < A.Length; i++)
+            {
+                if (!union.Contains(A[i]))
+                {
+                    union[idx] = A[i];
+                    idx++;
+                }
+            }
+            for (int i = 0; i < B.Length; i++)
+            {
+                if (!union.Contains(B[i]))
+                {
+                    union[idx] = B[i];
+                    idx++;
+                }
+            }
+            int[] result = new int[idx];
+            for (int i = 0; i < result.Length; i++)
+                result[i] = union[i];
+            return result;
+        }
+
+        static int FindMax(params int[] A)
+        {
+            int max = int.MinValue;
+            foreach (var x in A)
+            {
+                if (x > max) max = x;
+            }
+            return max;
+        }
+
+        static void PrintArray(params int[] ar)
+        {
+            Console.Write("[ ");
+            foreach (var x in ar) Console.Write($"{x}, "); // var: 묵시적 자료형(할당으로 자료형 판단)
+            Console.Write(" ]");
+        }
+
+        static void PrintArray(params string[] ar)
+        {
+            Console.Write("[ ");
+            foreach (var x in ar) Console.Write($"{x}, ");
+            Console.Write(" ]");
         }
 
         // 5-4용 메소드
