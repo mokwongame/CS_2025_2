@@ -1,4 +1,4 @@
 chcp 65001
 git add --all
-git commit -m "불필요 파일 제거"
+git commit -m "C# 문법 추가"
 git push -u origin main
