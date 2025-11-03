@@ -1,0 +1,15 @@
+D:\CS_2025_2\TestClass\bin\Debug\net8.0\TestClass.exe
+D:\CS_2025_2\TestClass\bin\Debug\net8.0\TestClass.deps.json
+D:\CS_2025_2\TestClass\bin\Debug\net8.0\TestClass.runtimeconfig.json
+D:\CS_2025_2\TestClass\bin\Debug\net8.0\TestClass.dll
+D:\CS_2025_2\TestClass\bin\Debug\net8.0\TestClass.pdb
+D:\CS_2025_2\TestClass\obj\Debug\net8.0\TestClass.GeneratedMSBuildEditorConfig.editorconfig
+D:\CS_2025_2\TestClass\obj\Debug\net8.0\TestClass.AssemblyInfoInputs.cache
+D:\CS_2025_2\TestClass\obj\Debug\net8.0\TestClass.AssemblyInfo.cs
+D:\CS_2025_2\TestClass\obj\Debug\net8.0\TestClass.csproj.CoreCompileInputs.cache
+D:\CS_2025_2\TestClass\obj\Debug\net8.0\TestClass.sourcelink.json
+D:\CS_2025_2\TestClass\obj\Debug\net8.0\TestClass.dll
+D:\CS_2025_2\TestClass\obj\Debug\net8.0\refint\TestClass.dll
+D:\CS_2025_2\TestClass\obj\Debug\net8.0\TestClass.pdb
+D:\CS_2025_2\TestClass\obj\Debug\net8.0\TestClass.genruntimeconfig.cache
+D:\CS_2025_2\TestClass\obj\Debug\net8.0\ref\TestClass.dll
