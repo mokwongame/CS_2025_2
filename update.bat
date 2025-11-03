@@ -1,4 +1,4 @@
 chcp 65001
 git add --all
-git commit -m "5장 연습문제 풀이 완성"
+git commit -m "실습 과제 #4 정답"
 git push -u origin main
