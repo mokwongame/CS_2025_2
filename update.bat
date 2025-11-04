@@ -1,4 +1,4 @@
 chcp 65001
 git add --all
-git commit -m "C# 문법 더 추가"
+git commit -m "MyClass 프로젝트 시작"
 git push -u origin main
