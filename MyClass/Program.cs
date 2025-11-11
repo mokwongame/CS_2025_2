@@ -41,6 +41,43 @@ namespace MyClass
             SmartPhone sPhone = new SmartPhone("010-1234-5678", "Sacramento_5G");
             sPhone.Call("010-9876-5432");
             sPhone.ConnectWifi();
+
+            Console.WriteLine("\n[6-9]\n");
+            ColorPen cPen = new ColorPen("blue", 3);
+            cPen.Paint();
+            Pen p = cPen as Pen; // (Pen)cPen
+            p.Write();
+            p.Erase();
+        }
+
+        class Pen
+        {
+            public void Write()
+            {
+                Console.WriteLine("Writing");
+            }
+
+            public void Erase()
+            {
+                Console.WriteLine("Erasing");
+            }
+        }
+
+        class ColorPen : Pen
+        {
+            public ColorPen(string c, int t)
+            {
+                color = c;
+                thickness = t;
+            }
+
+            public void Paint()
+            {
+                Console.WriteLine("Painting");
+            }
+
+            string color;
+            int thickness;
         }
 
         class Phone
