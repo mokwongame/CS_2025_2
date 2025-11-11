@@ -1,4 +1,7 @@
-﻿namespace MyClass
+﻿using System.Formats.Asn1;
+using System.Runtime.CompilerServices;
+
+namespace MyClass
 {
     internal class Program
     {
@@ -15,6 +18,133 @@
             Console.WriteLine($"이름: {tom.GetName()}");
             Console.WriteLine($"나이: {tom.GetAge()}");
             Console.WriteLine($"도시: {tom.GetCity()}");
+
+            Console.WriteLine("\n[6-3]\n");
+            Product ramen = new Product("rm001", 3000);
+            Product juice = new Product("jc021", 4000);
+            Console.WriteLine(Product.GetFactoryName());
+            Console.WriteLine(Product.GetProductCount());
+            Console.WriteLine(ramen.GetProductID());
+            Console.WriteLine(juice.GetPrice());
+
+            Console.WriteLine("\n[6-4]\n");
+            double x = Math.PI; // 원주율
+            Console.WriteLine($"pi = {x}");
+            Console.WriteLine($"pi = {x:F3}"); // 소수점 3자리까지 출력
+
+            Console.WriteLine("\n[6-5]\n");
+            ElectricCar eCar = new ElectricCar(500);
+            eCar.Run();
+            eCar.Charge();
+
+            Console.WriteLine("\n[6-7]\n");
+            SmartPhone sPhone = new SmartPhone("010-1234-5678", "Sacramento_5G");
+            sPhone.Call("010-9876-5432");
+            sPhone.ConnectWifi();
+        }
+
+        class Phone
+        {
+            public Phone(string number)
+            {
+                this.number = number;
+            }
+
+            public void Call(string num)
+            {
+                Console.WriteLine($"Calling {num}");
+            }
+
+            public void Receive()
+            {
+                Console.WriteLine("Receive");
+            }
+
+            string number;
+        }
+
+        class SmartPhone : Phone
+        {
+            public SmartPhone(string number, string ssid) : base(number) // 부모 클래스(base)의 생성자 호출
+            {
+                Wifi_SSID = ssid;
+            }
+
+            public void ConnectWifi()
+            {
+                Console.WriteLine($"Connecting to {Wifi_SSID}");
+            }
+
+            string Wifi_SSID;
+        }
+
+        class Vehicle
+        {
+            public void Run()
+            {
+                Console.WriteLine("Run");
+            }
+
+            public void Stop()
+            {
+                Console.WriteLine("Stop");
+            }
+        }
+
+        class ElectricCar : Vehicle
+        {
+            public ElectricCar(int cap)
+            {
+                batteryCapacity = cap;
+            }
+
+            public void Charge()
+            {
+                Console.WriteLine($"Charging {batteryCapacity} kWh");
+            }
+
+            int batteryCapacity;
+        }
+
+        class Product
+        {
+            static Product()
+            {
+                Product.factory = "KFood";
+                Product.numInst = 0;
+            }
+
+            public Product(string id, uint price)
+            {
+                this.id = id;
+                this.price = price;
+                Product.numInst++;
+            }
+
+            public static string GetFactoryName()
+            {
+                return Product.factory;
+            }
+
+            public static uint GetProductCount()
+            {
+                return Product.numInst;
+            }
+
+            public string GetProductID()
+            {
+                return id;
+            }
+
+            public uint GetPrice()
+            {
+                return price;
+            }
+
+            string id;
+            uint price;
+            static readonly string factory;
+            static uint numInst; // 인스턴스 개수
         }
 
         class Person1
