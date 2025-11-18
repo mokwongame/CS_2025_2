@@ -1,4 +1,4 @@
 chcp 65001
 git add --all
-git commit -m "멤버 접근 권한"
+git commit -m "MyInterface 프로젝트 시작"
 git push -u origin main
