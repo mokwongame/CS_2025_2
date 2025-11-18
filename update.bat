@@ -1,4 +1,4 @@
 chcp 65001
 git add --all
-git commit -m "C# 문법 정리"
+git commit -m "실습 과제 #5 정답 공개"
 git push -u origin main
