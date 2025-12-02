@@ -12,7 +12,74 @@ namespace Dice19Main
 
         public void Start()
         {
+            ShowLogo();
+            while (true)
+            {
+                ShowMenu();
+                char input = SelectMenu();
+                bool isExit = false;
+                switch (input)
+                {
+                    case '1':
+                        PlayDice19();
+                        break;
+                    case '2':
+                        GetPoint();
+                        break;
+                    case '3':
+                        ShowStat();
+                        break;
+                    case '4':
+                        isExit = true;
+                        break;
+                }
+                if (isExit) break; // 무한 루프를 빠져나가기 위한 break
+            }
+        }
 
+        protected void PlayDice19()
+        {
+
+        }
+
+        protected void GetPoint()
+        {
+
+        }
+
+        protected void ShowStat()
+        {
+
+        }
+
+        protected char SelectMenu()
+        {
+            char input = MgLib.Input("원하는 메뉴를 선택하세요: ", ConsoleColor.White);
+            return input;
+        }
+
+        protected void ShowMenu()
+        {
+            ConsoleColor textCol = ConsoleColor.Green;
+            MgLib.TextOutLine("==============", textCol);
+            MgLib.TextOutLine("1. 주사위 19 게임", textCol);
+            MgLib.TextOutLine("2. 포인트 모으기", textCol);
+            MgLib.TextOutLine("3. 게임 통계", textCol);
+            MgLib.TextOutLine("4. 게임 종료", textCol);
+            MgLib.TextOutLine("==============", textCol);
+        }
+
+        protected void ShowLogo()
+        {
+            // 로고: ASCII art generator 사용
+            // 주의점: \를 쓰는 경우는 @""(\를 그대로 출력)를 사용
+            ConsoleColor textCol = ConsoleColor.Magenta;
+            MgLib.TextOutLine("___ ____    _ _____", textCol);
+            MgLib.TextOutLine(@"|  \/  | |  | | __ \", textCol);
+            MgLib.TextOutLine(@"| .  . | |  | | |  \/", textCol);
+            MgLib.TextOutLine(@"| |\/| | |/\| | | __", textCol);
+            MgLib.TextOutLine(@"| |  | \  /\  / | _\ \", textCol);
+            MgLib.TextOutLine(@"\_ |  | _ /\/  \/ \____ /", textCol);
         }
     }
 }
