@@ -20,9 +20,14 @@ namespace Dice19Main
         public int Rmin { get; set; } = 0; // Rmin을 0으로 초기화
         public int Rmax { get; set; } = 1; // Rmax를 0으로 초기화
 
+        public RandGen() { }
+
+        // Rmin에서 Rmax-1까지 정수인 난수 발생
         public int GetRand()
         {
-            return 0;
+            Random random = new Random();
+            int val = random.Next(Rmin, Rmax);
+            return val;
         }
     }
 }

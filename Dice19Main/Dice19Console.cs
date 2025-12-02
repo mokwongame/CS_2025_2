@@ -44,7 +44,8 @@ namespace Dice19Main
 
         protected void GetPoint()
         {
-
+            CoinGame game = new CoinGame();
+            game.Start();
         }
 
         protected void ShowStat()
