@@ -39,7 +39,8 @@ namespace Dice19Main
 
         protected void PlayDice19()
         {
-
+            Dice19Game game = new Dice19Game();
+            game.Start();
         }
 
         protected void GetPoint()
