@@ -50,7 +50,7 @@ namespace Dice19Main
 
         protected void ShowStat()
         {
-
+            MgLib.TextOutLine($"\n현재 게임 포인트 = {GameManager.Instance.GamePoint}\n", ConsoleColor.Magenta);
         }
 
         protected char SelectMenu()

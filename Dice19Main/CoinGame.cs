@@ -8,9 +8,8 @@ namespace Dice19Main
 {
     internal class CoinGame
     {
-        int point;
         public CoinGame()
-        { point = 0; }
+        { }
 
         public void Start()
         {
@@ -27,12 +26,12 @@ namespace Dice19Main
                 if (input == coinChar) // 성공
                 {
                     MgLib.TextOutLine("잘 맞추었습니다.", ConsoleColor.Blue);
-                    point += 2;
+                    GameManager.Instance.GamePoint += 2;
                 }
                 else // 실패
                 {
                     MgLib.TextOutLine("틀렸습니다.", ConsoleColor.Red);
-                    point--;
+                    GameManager.Instance.GamePoint--;
                 }
                 input = MgLib.Input("끝내려면 X를 누르세요. 계속 하려면 다른 키를 누르세요: ");
                 if (input == 'x' || input == 'X') break; // 무한 루프를 빠져나가는 break
